@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAXOTECH — Future Forward Platform</title>
+  <meta name="description" content="RAXOTECH is a cutting-edge platform designed for performance, clarity, and a futuristic tech aesthetic." />
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vsz9vehr7b");</script>
+  <!-- DM Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0A;
+      --card: #111111;
+      --card2: #161616;
+      --border: rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.55);
+      --muted2: rgba(255,255,255,0.35);
+      --grad1: linear-gradient(135deg, #7F00FF, #E100FF);
+      --grad2: linear-gradient(135deg, #00DBDE, #FC00FF);
+      --grad3: linear-gradient(135deg, #7F00FF 0%, #00DBDE 100%);
+      --glow1: rgba(127,0,255,0.25);
+      --glow2: rgba(225,0,255,0.25);
+      --glow3: rgba(0,219,222,0.25);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#7F00FF, #E100FF); border-radius: 10px; }
+
+    /* ===== PAGE SYSTEM ===== */
+    .page { display: none; animation: fadeIn 0.4s ease; }
+    .page.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(10,10,10,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px;
+      background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      cursor: pointer; user-select: none;
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links li a, .nav-links li button {
+      font-family: 'DM Sans', sans-serif;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 0.9rem; font-weight: 500;
+      padding: 0.5rem 0.9rem; border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      text-decoration: none; display: block;
+    }
+    .nav-links li a:hover, .nav-links li button:hover,
+    .nav-links li a.active, .nav-links li button.active {
+      color: var(--text); background: rgba(255,255,255,0.07);
+    }
+
+    .btn-grad {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background: var(--grad1); color: #fff; font-weight: 600; font-size: 0.9rem;
+      border: none; border-radius: 50px; cursor: pointer;
+      transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+      font-family: 'DM Sans', sans-serif; text-decoration: none;
+      box-shadow: 0 0 20px var(--glow1);
+    }
+    .btn-grad:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 30px var(--glow2); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 0.9rem;
+      border: 1px solid var(--border2); border-radius: 50px; cursor: pointer;
+      transition: all var(--transition);
+      font-family: 'DM Sans', sans-serif; text-decoration: none;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(127,0,255,0.5); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+
+    /* ===== COMMON LAYOUT ===== */
+    .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+    .section-full { padding: 5rem 5%; }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1px;
+      margin-bottom: 1rem; line-height: 1.15;
+    }
+    .section-subtitle { color: var(--muted); font-size: 1.1rem; max-width: 600px; line-height: 1.7; }
+    .label-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      background: rgba(127,0,255,0.15); border: 1px solid rgba(127,0,255,0.3);
+      border-radius: 50px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      color: #c070ff; margin-bottom: 1.2rem; text-transform: uppercase;
+    }
+    .label-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: #c070ff; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.4; } }
+
+    .grad-text {
+      background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .grad-text2 {
+      background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 4rem 5%;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(127,0,255,0.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,219,222,0.1) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+      background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 860px; }
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800; letter-spacing: -2px; line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; }
+    .hero-stats { display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
+    .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+    .stat-divider { width: 1px; background: var(--border2); align-self: stretch; }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--grad1); opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .card:hover { border-color: rgba(127,0,255,0.4); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px var(--glow1); }
+    .card:hover::before { opacity: 0.04; }
+
+    .card-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(127,0,255,0.15); border: 1px solid rgba(127,0,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; font-size: 1.4rem;
+    }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+    /* ===== FEATURE HIGHLIGHTS ===== */
+    .feature-highlight {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .feature-highlight.reverse { direction: rtl; }
+    .feature-highlight.reverse > * { direction: ltr; }
+    .feature-visual {
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: var(--card2); border: 1px solid var(--border);
+      aspect-ratio: 4/3; position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .feature-visual-inner { width: 80%; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonial-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+    }
+    .testimonial-card .quote { font-size: 2rem; line-height: 1; margin-bottom: 1rem; opacity: 0.4; }
+    .testimonial-card p { color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.9rem; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+    .author-name { font-weight: 700; font-size: 0.9rem; }
+    .author-role { font-size: 0.8rem; color: var(--muted); }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(127,0,255,0.12), rgba(0,219,222,0.08));
+      border: 1px solid rgba(127,0,255,0.2);
+      border-radius: var(--radius-lg); padding: 5rem 3rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(127,0,255,0.08) 0%, transparent 60%);
+    }
+
+    /* ===== SERVICES ===== */
+    .service-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2.2rem;
+      transition: all var(--transition); position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--grad1); transform: scaleX(0);
+      transform-origin: left; transition: transform var(--transition);
+    }
+    .service-card:hover { border-color: rgba(127,0,255,0.3); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-number { font-size: 0.75rem; font-weight: 700; color: #7F00FF; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; font-family: 'DM Mono', monospace; }
+    .service-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    .service-tag { display: inline-block; padding: 0.25rem 0.7rem; background: rgba(127,0,255,0.1); border: 1px solid rgba(127,0,255,0.2); border-radius: 50px; font-size: 0.75rem; color: #c070ff; margin-right: 0.4rem; margin-bottom: 0.4rem; }
+
+    /* ===== PRICING ===== */
+    .pricing-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2.5rem;
+      transition: all var(--transition); position: relative;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(127,0,255,0.15), rgba(225,0,255,0.08));
+      border-color: rgba(127,0,255,0.4);
+      box-shadow: 0 0 40px var(--glow1);
+    }
+    .pricing-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--grad1); color: #fff; font-size: 0.72rem; font-weight: 700;
+      padding: 0.25rem 1rem; border-radius: 50px; letter-spacing: 0.5px; white-space: nowrap;
+    }
+    .price { font-size: 3rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin: 1rem 0 0.3rem; }
+    .price span { font-size: 1rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+    .pricing-feature { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); }
+    .pricing-feature:last-of-type { border-bottom: none; }
+    .pricing-feature .check { color: #00DBDE; font-size: 1rem; }
+    .pricing-feature .x { color: rgba(255,255,255,0.2); }
+
+    /* ===== TEAM ===== */
+    .team-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: all var(--transition); text-align: center;
+    }
+    .team-card:hover { border-color: rgba(127,0,255,0.35); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+    .team-avatar {
+      width: 100%; padding: 2.5rem 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(127,0,255,0.1), rgba(0,219,222,0.06));
+      display: flex; justify-content: center;
+    }
+    .team-photo {
+      width: 90px; height: 90px; border-radius: 50%;
+      border: 2px solid rgba(127,0,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 800;
+      background: var(--card2);
+    }
+    .team-info { padding: 1.2rem 1.5rem 1.5rem; }
+    .team-name { font-weight: 700; margin-bottom: 0.3rem; }
+    .team-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+    .team-socials { display: flex; justify-content: center; gap: 0.6rem; }
+    .social-icon {
+      width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+      cursor: pointer; transition: all var(--transition); color: var(--muted); text-decoration: none;
+    }
+    .social-icon:hover { background: rgba(127,0,255,0.15); border-color: rgba(127,0,255,0.4); color: #fff; }
+
+    /* ===== BLOG ===== */
+    .blog-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .blog-card:hover { border-color: rgba(127,0,255,0.3); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .blog-img { height: 180px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .blog-body { padding: 1.5rem; }
+    .blog-cat { font-size: 0.72rem; font-weight: 700; color: #c070ff; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.6rem; }
+    .blog-title { font-weight: 700; margin-bottom: 0.6rem; line-height: 1.4; }
+    .blog-excerpt { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .blog-meta { display: flex; align-items: center; gap: 0.8rem; font-size: 0.8rem; color: var(--muted2); }
+
+    /* ===== CONTACT ===== */
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%; background: var(--card2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 0.9rem 1.1rem;
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none; resize: vertical;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: rgba(127,0,255,0.5);
+      box-shadow: 0 0 0 3px rgba(127,0,255,0.1);
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted2); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .contact-info-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;
+    }
+    .contact-icon { font-size: 1.4rem; width: 44px; height: 44px; background: rgba(127,0,255,0.12); border: 1px solid rgba(127,0,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-detail h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .contact-detail p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ===== MAP PLACEHOLDER ===== */
+    .map-placeholder {
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: var(--radius); height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.9rem; gap: 0.5rem;
+    }
+
+    /* ===== ABOUT TIMELINE ===== */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #7F00FF, #E100FF, #00DBDE); }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2.45rem; top: 0.3rem;
+      width: 14px; height: 14px; border-radius: 50%; background: var(--grad1); box-shadow: 0 0 10px var(--glow1);
+    }
+    .timeline-year { font-size: 0.75rem; font-weight: 700; color: #c070ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-family: 'DM Mono', monospace; }
+    .timeline-item h4 { font-weight: 700; margin-bottom: 0.4rem; }
+    .timeline-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      display: flex; gap: 0.8rem; max-width: 460px; margin: 2rem auto 0;
+      background: var(--card); border: 1px solid var(--border); border-radius: 50px; padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+    }
+    .newsletter input { background: none; border: none; flex: 1; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
+    .newsletter input::placeholder { color: var(--muted2); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070707; border-top: 1px solid var(--border);
+      padding: 5rem 5% 2rem;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+    .footer-brand p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin: 1rem 0 1.5rem; max-width: 280px; }
+    .footer-social { display: flex; gap: 0.7rem; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+      color: var(--muted); text-decoration: none; transition: all var(--transition);
+    }
+    .footer-social a:hover { background: rgba(127,0,255,0.15); border-color: rgba(127,0,255,0.4); color: #fff; }
+    .footer-col h4 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.3px; margin-bottom: 1.2rem; color: var(--text); }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.7rem; }
+    .footer-col ul li a { font-size: 0.85rem; color: var(--muted); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--text); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .footer-bottom p { font-size: 0.82rem; color: var(--muted2); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-size: 0.82rem; color: var(--muted2); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom-links a:hover { color: var(--text); }
+
+    /* ===== FEATURE PAGE ===== */
+    .feature-big-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
+    .feature-big-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2.2rem;
+      transition: all var(--transition);
+    }
+    .feature-big-card:hover { border-color: rgba(127,0,255,0.35); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+    .feature-big-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+    .feature-big-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .feature-big-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; }
+    .comparison-table th { text-align: left; padding: 1rem 1.2rem; background: rgba(127,0,255,0.08); font-size: 0.85rem; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--border2); }
+    .comparison-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .comp-check { color: #00DBDE; }
+    .comp-x { color: rgba(255,255,255,0.2); }
+    .comp-highlight td { background: rgba(127,0,255,0.05); }
+
+    /* ===== ABOUT PAGE SPECIFIC ===== */
+    .mission-card {
+      background: linear-gradient(135deg, rgba(127,0,255,0.12), rgba(0,219,222,0.08));
+      border: 1px solid rgba(127,0,255,0.2); border-radius: var(--radius-lg);
+      padding: 3rem; text-align: center; position: relative; overflow: hidden;
+    }
+
+    /* ===== PROCESS ===== */
+    .process-step { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2.5rem; }
+    .process-num {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(127,0,255,0.12); border: 1px solid rgba(127,0,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; flex-shrink: 0;
+      font-family: 'DM Mono', monospace;
+      background: var(--grad1); color: #fff;
+    }
+    .process-content h4 { font-weight: 700; margin-bottom: 0.4rem; }
+    .process-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .feature-highlight { grid-template-columns: 1fr; gap: 2rem; }
+      .feature-highlight.reverse { direction: ltr; }
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4, .feature-big-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .stat-divider { display: none; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(20px); flex-direction: column; padding: 1rem; border-bottom: 1px solid var(--border); gap: 0.25rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+      .newsletter { flex-direction: column; border-radius: var(--radius); padding: 1rem; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+
+    .glow-orb {
+      position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+    }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== MISC ===== */
+    .divider { height: 1px; background: var(--border); margin: 0 5%; }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; background: rgba(0,219,222,0.12); border: 1px solid rgba(0,219,222,0.25); border-radius: 6px; font-size: 0.75rem; color: #00DBDE; font-weight: 600; }
+    .badge-purple { background: rgba(127,0,255,0.12); border-color: rgba(127,0,255,0.25); color: #c070ff; }
+
+    .stars { color: #f5c518; font-size: 0.85rem; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="showPage('home')">RAXOTECH</div>
+  <ul class="nav-links" id="navLinks">
+    <li><button class="active" onclick="showPage('home',this)">Home</button></li>
+    <li><button onclick="showPage('about',this)">About</button></li>
+    <li><button onclick="showPage('features',this)">Features</button></li>
+    <li><button onclick="showPage('services',this)">Services</button></li>
+    <li><button onclick="showPage('team',this)">Team</button></li>
+    <li><button onclick="showPage('blog',this)">Blog</button></li>
+    <li><button onclick="showPage('contact',this)">Contact</button></li>
+  </ul>
+  <button class="btn-grad" onclick="showPage('contact')">Get Started</button>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============================= HOME PAGE ============================= -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="glow-orb" style="width:500px;height:500px;background:rgba(127,0,255,0.15);top:-150px;left:50%;transform:translateX(-50%);"></div>
+    <div class="hero-content">
+      <div class="label-pill"><span class="dot"></span> Now in Public Beta</div>
+      <h1 class="hero-title">
+        Build the Future<br/>
+        <span class="grad-text">Without Limits</span>
+      </h1>
+      <p class="hero-sub">RAXOTECH is the next-generation platform for visionary builders — combining performance, clarity, and cutting-edge design into one unified workspace.</p>
+      <div class="hero-actions">
+        <button class="btn-grad" onclick="showPage('contact')">🚀 Get Started Free</button>
+        <button class="btn-outline" onclick="showPage('features')">Explore Features →</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num grad-text">50K+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num grad-text2">99.9%</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num grad-text">180+</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num grad-text2">4.9★</div>
+          <div class="stat-label">User Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="section-full" style="padding:5rem 5%">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="label-pill"><span class="dot"></span> Platform Highlights</div>
+        <h2 class="section-title">Everything you need to <span class="grad-text">scale</span></h2>
+        <p class="section-subtitle" style="margin:0 auto">Powerful tools designed for modern teams who move fast and ship faster.</p>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Blazing Performance</h3>
+          <p>Sub-100ms response times globally with our edge-optimized infrastructure spanning 40+ data centers worldwide.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Enterprise Security</h3>
+          <p>SOC 2 Type II certified with end-to-end encryption, zero-knowledge architecture, and compliance-ready audit logs.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h3>Seamless Integrations</h3>
+          <p>Connect to 200+ tools out of the box. Our API-first approach makes it effortless to plug into any stack.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>AI-Powered Insights</h3>
+          <p>Machine learning algorithms that surface actionable intelligence from your data in real-time, 24/7.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Advanced Analytics</h3>
+          <p>Customizable dashboards with granular metrics, cohort analysis, and predictive forecasting built in.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Global Collaboration</h3>
+          <p>Real-time multiplayer editing, async workflows, and localization support for distributed teams of any size.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section-full" style="padding:2rem 5% 5rem">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div>
+          <div class="label-pill"><span class="dot"></span> Our Services</div>
+          <h2 class="section-title">Tailored solutions for <span class="grad-text2">every challenge</span></h2>
+          <p style="color:var(--muted);line-height:1.75;margin-bottom:2rem">From strategy to execution, our suite of services covers every stage of your digital transformation journey with expertise and precision.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm)">
+              <span style="font-size:1.4rem">🎯</span>
+              <div><div style="font-weight:700;font-size:0.95rem">Strategy & Consulting</div><div style="font-size:0.83rem;color:var(--muted)">Roadmapping and digital strategy</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm)">
+              <span style="font-size:1.4rem">⚙️</span>
+              <div><div style="font-weight:700;font-size:0.95rem">Platform Engineering</div><div style="font-size:0.83rem;color:var(--muted)">Custom infrastructure at scale</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm)">
+              <span style="font-size:1.4rem">🎨</span>
+              <div><div style="font-weight:700;font-size:0.95rem">Design Systems</div><div style="font-size:0.83rem;color:var(--muted)">UI/UX that converts and delights</div></div>
+            </div>
+          </div>
+          <button class="btn-grad" onclick="showPage('services')">View All Services →</button>
+        </div>
+        <div style="background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;position:relative;overflow:hidden">
+          <div class="glow-orb" style="width:200px;height:200px;background:rgba(127,0,255,0.15);top:-50px;right:-50px;"></div>
+          <div style="position:relative;z-index:1">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem">
+              <span style="font-size:0.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">Platform Activity</span>
+              <span class="badge">Live</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem;background:rgba(127,0,255,0.08);border:1px solid rgba(127,0,255,0.15);border-radius:10px">
+                <span style="font-size:0.88rem">Projects Deployed</span><span style="font-weight:800;font-size:1.1rem" class="grad-text">12,483</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem;background:rgba(0,219,222,0.06);border:1px solid rgba(0,219,222,0.15);border-radius:10px">
+                <span style="font-size:0.88rem">API Calls Today</span><span style="font-weight:800;font-size:1.1rem" class="grad-text2">2.4M</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem;background:rgba(127,0,255,0.08);border:1px solid rgba(127,0,255,0.15);border-radius:10px">
+                <span style="font-size:0.88rem">System Uptime</span><span style="font-weight:800;font-size:1.1rem;color:#00DBDE">99.97%</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem;background:rgba(0,219,222,0.06);border:1px solid rgba(0,219,222,0.15);border-radius:10px">
+                <span style="font-size:0.88rem">Avg Response Time</span><span style="font-weight:800;font-size:1.1rem;color:#c070ff">84ms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-full" style="padding:2rem 5% 5rem">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="label-pill"><span class="dot"></span> What They Say</div>
+        <h2 class="section-title">Loved by teams <span class="grad-text">worldwide</span></h2>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p>RAXOTECH completely transformed how our engineering team collaborates. The performance improvements alone paid for the subscription within days. Absolutely elite product.</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:linear-gradient(135deg,#7F00FF,#E100FF)">SK</div>
+            <div><div class="author-name">Sarah Kim</div><div class="author-role">CTO at Nexaflow</div></div>
+          </div>
+          <div class="stars" style="margin-top:1rem">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p>We migrated our entire infrastructure in a weekend. The documentation is stellar, the support team responded in minutes. Worth every cent and then some.</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:linear-gradient(135deg,#00DBDE,#FC00FF)">MR</div>
+            <div><div class="author-name">Marcus Reed</div><div class="author-role">Lead Dev at Voltara</div></div>
+          </div>
+          <div class="stars" style="margin-top:1rem">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p>The analytics dashboard is genuinely mind-blowing. Our team makes data-driven decisions three times faster than before. The AI insights feature alone is worth the investment.</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:linear-gradient(135deg,#E100FF,#00DBDE)">AL</div>
+            <div><div class="author-name">Aisha Laurent</div><div class="author-role">Head of Product, Orbis</div></div>
+          </div>
+          <div class="stars" style="margin-top:1rem">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:2rem 5% 6rem">
+    <div style="max-width:1200px;margin:0 auto">
+      <div class="cta-section">
+        <div style="position:relative;z-index:1">
+          <div class="label-pill" style="margin:0 auto 1.5rem"><span class="dot"></span> Limited Beta Access</div>
+          <h2 class="section-title" style="margin-bottom:1rem">Ready to build <span class="grad-text">something epic?</span></h2>
+          <p style="color:var(--muted);max-width:500px;margin:0 auto 2.5rem;line-height:1.75">Join thousands of forward-thinking teams who have already made the switch. No credit card required for the first 30 days.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <button class="btn-grad" onclick="showPage('contact')">🚀 Start for Free</button>
+            <button class="btn-outline" onclick="showPage('about')">Learn About Us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================= ABOUT PAGE ============================= -->
+<div class="page" id="page-about">
+
+  <!-- Header -->
+  <section style="padding:5rem 5% 3rem;max-width:1200px;margin:0 auto">
+    <div class="label-pill"><span class="dot"></span> Our Story</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <div>
+        <h1 class="section-title">We're building the <span class="grad-text">infrastructure</span> of tomorrow</h1>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem">RAXOTECH was born from a simple conviction: the best tools should feel effortless. Founded in 2020 by a group of engineers and designers who were tired of clunky, slow, and expensive platforms, we set out to build something truly different.</p>
+        <p style="color:var(--muted);line-height:1.8;">Today, we serve teams across 180 countries — from scrappy startups to Fortune 500 enterprises — all united by a desire to build, ship, and grow without friction.</p>
+      </div>
+      <div style="background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;text-align:center;position:relative;overflow:hidden">
+        <div class="glow-orb" style="width:300px;height:300px;background:rgba(0,219,222,0.12);bottom:-100px;right:-80px"></div>
+        <div style="font-size:4rem;margin-bottom:1rem;position:relative;z-index:1">🌍</div>
+        <div style="font-size:3rem;font-weight:800;letter-spacing:-2px;margin-bottom:0.3rem;position:relative;z-index:1" class="grad-text2">2020</div>
+        <div style="color:var(--muted);font-size:0.9rem;position:relative;z-index:1">Year Founded</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;position:relative;z-index:1">
+          <div style="padding:1rem;background:rgba(127,0,255,0.08);border:1px solid rgba(127,0,255,0.15);border-radius:12px">
+            <div style="font-size:1.5rem;font-weight:800" class="grad-text">85+</div>
+            <div style="font-size:0.78rem;color:var(--muted)">Team members</div>
+          </div>
+          <div style="padding:1rem;background:rgba(0,219,222,0.06);border:1px solid rgba(0,219,222,0.15);border-radius:12px">
+            <div style="font-size:1.5rem;font-weight:800" class="grad-text2">$42M</div>
+            <div style="font-size:0.78rem;color:var(--muted)">Raised</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section style="padding:2rem 5%;max-width:1200px;margin:0 auto">
+    <div class="grid-2">
+      <div class="mission-card">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🎯</div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:0.8rem">Our Mission</h3>
+        <p style="color:var(--muted);line-height:1.75;font-size:0.95rem">To democratize access to world-class technology infrastructure — making it fast, affordable, and intuitive for teams of every size to build at the highest level.</p>
+      </div>
+      <div class="mission-card" style="background:linear-gradient(135deg,rgba(0,219,222,0.1),rgba(252,0,255,0.06));border-color:rgba(0,219,222,0.2)">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🔭</div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:0.8rem">Our Vision</h3>
+        <p style="color:var(--muted);line-height:1.75;font-size:0.95rem">A world where every ambitious builder — regardless of resources — has access to the same elite-level tools as the biggest companies on the planet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section style="padding:4rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="label-pill"><span class="dot"></span> Our Journey</div>
+      <h2 class="section-title">From idea to <span class="grad-text">impact</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2020</div>
+          <h4>Founded in San Francisco</h4>
+          <p>Three engineers quit their jobs at FAANG companies to build the platform they always wished existed. First commit on day one.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <h4>Seed Round: $3.5M</h4>
+          <p>Raised from Tier-1 investors. Grew team to 18 people. Launched private beta to 200 early customers.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022</div>
+          <h4>10,000 Users Milestone</h4>
+          <p>Reached product-market fit. Launched the integrations marketplace with 50+ connectors. Series A: $12M.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2023</div>
+          <h4>Enterprise Launch & Series B</h4>
+          <p>Launched enterprise tier. Signed first Fortune 100 customer. Raised $27M. Expanded to Europe and Asia-Pacific.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--grad2);box-shadow:0 0 10px var(--glow3)"></div>
+          <div class="timeline-year">2024 — Now</div>
+          <h4>Global Platform & AI Layer</h4>
+          <p>Launched AI-powered analytics and automation. 50K+ active users. Expanding to South America and Africa.</p>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;margin-bottom:1.5rem">
+          <h3 style="font-weight:800;margin-bottom:1.5rem;font-size:1.1rem">Core Values</h3>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <span style="font-size:1.2rem">🚀</span>
+              <div><div style="font-weight:700;font-size:0.9rem;margin-bottom:0.2rem">Velocity Over Perfection</div><div style="font-size:0.83rem;color:var(--muted)">We ship fast, learn faster, and iterate without fear.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <span style="font-size:1.2rem">🧑‍🤝‍🧑</span>
+              <div><div style="font-weight:700;font-size:0.9rem;margin-bottom:0.2rem">Customer-First Always</div><div style="font-size:0.83rem;color:var(--muted)">Every product decision starts and ends with customer impact.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <span style="font-size:1.2rem">🔍</span>
+              <div><div style="font-weight:700;font-size:0.9rem;margin-bottom:0.2rem">Radical Transparency</div><div style="font-size:0.83rem;color:var(--muted)">Open by default — with our team, our users, and the world.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <span style="font-size:1.2rem">⚡</span>
+              <div><div style="font-weight:700;font-size:0.9rem;margin-bottom:0.2rem">Technical Excellence</div><div style="font-size:0.83rem;color:var(--muted)">We hold ourselves to the highest engineering standards. Always.</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(127,0,255,0.1),rgba(0,219,222,0.07));border:1px solid rgba(127,0,255,0.2);border-radius:var(--radius-lg);padding:2rem;text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">🏆</div>
+          <div style="font-weight:800;margin-bottom:0.3rem">G2 Top Rated 2024</div>
+          <div style="font-size:0.85rem;color:var(--muted)">4.9/5 from 1,200+ reviews</div>
+          <div class="stars" style="margin-top:0.6rem;font-size:1.1rem">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================= FEATURES PAGE ============================= -->
+<div class="page" id="page-features">
+  <section style="padding:5rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="label-pill"><span class="dot"></span> Platform Features</div>
+      <h1 class="section-title">One platform, <span class="grad-text">infinite possibilities</span></h1>
+      <p class="section-subtitle" style="margin:0 auto">Everything you need to build, ship, and scale — without switching between a dozen tools.</p>
+    </div>
+
+    <div class="feature-big-grid">
+      <div class="feature-big-card">
+        <div class="feature-big-icon">⚡</div>
+        <h3>Edge-Native Performance</h3>
+        <p>Deploy to 40+ global edge nodes automatically. Your users experience sub-100ms latency no matter where they are in the world.</p>
+      </div>
+      <div class="feature-big-card" style="background:linear-gradient(135deg,rgba(127,0,255,0.1),rgba(225,0,255,0.05));border-color:rgba(127,0,255,0.25)">
+        <div class="feature-big-icon">🤖</div>
+        <h3>AI-Powered Automation</h3>
+        <p>Intelligent workflows that learn your patterns and automate repetitive tasks — saving your team hours every single week.</p>
+      </div>
+      <div class="feature-big-card">
+        <div class="feature-big-icon">📊</div>
+        <h3>Real-Time Analytics</h3>
+        <p>Live dashboards with zero-delay metrics. Cohort analysis, funnels, retention curves — everything your team needs to grow.</p>
+      </div>
+      <div class="feature-big-card">
+        <div class="feature-big-icon">🔐</div>
+        <h3>Zero-Trust Security</h3>
+        <p>Every request verified, every connection encrypted, every access logged. SOC 2 Type II + GDPR + HIPAA compliant out of the box.</p>
+      </div>
+      <div class="feature-big-card" style="background:linear-gradient(135deg,rgba(0,219,222,0.08),rgba(252,0,255,0.05));border-color:rgba(0,219,222,0.2)">
+        <div class="feature-big-icon">🔗</div>
+        <h3>Universal Integrations</h3>
+        <p>Native connectors for Slack, GitHub, Jira, Salesforce, Stripe, and 200 more. REST + GraphQL APIs for anything custom.</p>
+      </div>
+      <div class="feature-big-card">
+        <div class="feature-big-icon">🌐</div>
+        <h3>Multi-Region Failover</h3>
+        <p>Automatic failover with sub-second RTO. Your platform stays online even when an entire cloud region goes dark.</p>
+      </div>
+    </div>
+
+    <!-- Benefits section -->
+    <div style="background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;margin-bottom:4rem">
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:2rem;text-align:center">Why teams switch to <span class="grad-text">RAXOTECH</span></h2>
+      <div class="grid-2" style="gap:2rem">
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <span style="font-size:1.3rem;margin-top:0.1rem">✅</span>
+          <div><h4 style="font-weight:700;margin-bottom:0.3rem">10x Faster Development</h4><p style="font-size:0.88rem;color:var(--muted)">Automated scaffolding, smart defaults, and pre-built components cut development time by an order of magnitude.</p></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <span style="font-size:1.3rem;margin-top:0.1rem">✅</span>
+          <div><h4 style="font-weight:700;margin-bottom:0.3rem">60% Lower Infrastructure Costs</h4><p style="font-size:0.88rem;color:var(--muted)">Smart resource allocation and autoscaling eliminate idle compute. Pay only for what you actually use.</p></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <span style="font-size:1.3rem;margin-top:0.1rem">✅</span>
+          <div><h4 style="font-weight:700;margin-bottom:0.3rem">Zero Maintenance Overhead</h4><p style="font-size:0.88rem;color:var(--muted)">Automatic updates, security patches, and database vacuums — so you can focus entirely on product.</p></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <span style="font-size:1.3rem;margin-top:0.1rem">✅</span>
+          <div><h4 style="font-weight:700;margin-bottom:0.3rem">Instant Scalability</h4><p style="font-size:0.88rem;color:var(--muted)">Handle traffic spikes of any size instantly. No pre-provisioning, no cold starts, no surprises.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;text-align:center">How we <span class="grad-text2">compare</span></h2>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>RAXOTECH</th>
+              <th>Competitor A</th>
+              <th>Competitor B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="comp-highlight">
+              <td>Edge Deployment</td>
+              <td class="comp-check">✓ 40+ regions</td>
+              <td class="comp-check">✓ 12 regions</td>
+              <td class="comp-x">✗</td>
+            </tr>
+            <tr>
+              <td>AI Automation Layer</td>
+              <td class="comp-check">✓ Included</td>
+              <td class="comp-x">✗</td>
+              <td style="color:var(--muted)">Add-on only</td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>Real-Time Analytics</td>
+              <td class="comp-check">✓ Unlimited</td>
+              <td style="color:var(--muted)">Limited</td>
+              <td class="comp-check">✓</td>
+            </tr>
+            <tr>
+              <td>Integrations</td>
+              <td class="comp-check">✓ 200+</td>
+              <td style="color:var(--muted)">80+</td>
+              <td style="color:var(--muted)">45+</td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>SOC 2 + HIPAA</td>
+              <td class="comp-check">✓ Both</td>
+              <td style="color:var(--muted)">SOC 2 only</td>
+              <td class="comp-x">✗</td>
+            </tr>
+            <tr>
+              <td>99.99% SLA</td>
+              <td class="comp-check">✓</td>
+              <td class="comp-x">✗</td>
+              <td class="comp-x">✗</td>
+            </tr>
+            <tr class="comp-highlight">
+              <td>Starting Price</td>
+              <td class="grad-text" style="font-weight:700">$29/mo</td>
+              <td style="color:var(--muted)">$89/mo</td>
+              <td style="color:var(--muted)">$119/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= SERVICES PAGE ============================= -->
+<div class="page" id="page-services">
+  <section style="padding:5rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="label-pill"><span class="dot"></span> What We Offer</div>
+      <h1 class="section-title">Services built for <span class="grad-text">serious teams</span></h1>
+      <p class="section-subtitle" style="margin:0 auto">End-to-end solutions designed to accelerate your roadmap and amplify your impact.</p>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:5rem">
+      <div class="service-card">
+        <div class="service-number">01 — Strategy</div>
+        <h3>Technology Consulting</h3>
+        <p>Deep-dive architecture reviews, technology audits, and strategic roadmapping sessions with senior engineers who've scaled platforms to billions of requests.</p>
+        <div><span class="service-tag">Roadmapping</span><span class="service-tag">Audits</span><span class="service-tag">Workshops</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02 — Build</div>
+        <h3>Platform Engineering</h3>
+        <p>Custom infrastructure design and implementation. Kubernetes orchestration, CI/CD pipelines, observability stacks — everything configured to your exact requirements.</p>
+        <div><span class="service-tag">Kubernetes</span><span class="service-tag">CI/CD</span><span class="service-tag">DevOps</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03 — Design</div>
+        <h3>Product & UX Design</h3>
+        <p>User research, information architecture, interaction design, and polished UI delivery. We build design systems that scale without losing their soul.</p>
+        <div><span class="service-tag">UX Research</span><span class="service-tag">UI Design</span><span class="service-tag">Systems</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">04 — Grow</div>
+        <h3>Data & Analytics</h3>
+        <p>Full-stack analytics implementation: tracking, warehousing, visualization, and machine learning models that surface insights your team can actually act on.</p>
+        <div><span class="service-tag">Data Eng</span><span class="service-tag">ML/AI</span><span class="service-tag">BI</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05 — Secure</div>
+        <h3>Security & Compliance</h3>
+        <p>Penetration testing, vulnerability assessments, compliance gap analysis, and hands-on remediation. We protect what you've built.</p>
+        <div><span class="service-tag">PenTesting</span><span class="service-tag">GDPR</span><span class="service-tag">SOC 2</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">06 — Scale</div>
+        <h3>Managed Operations</h3>
+        <p>24/7 SRE coverage, incident management, capacity planning, and cost optimization. Your infrastructure, expertly managed around the clock.</p>
+        <div><span class="service-tag">SRE</span><span class="service-tag">24/7</span><span class="service-tag">FinOps</span></div>
+      </div>
+    </div>
+
+    <!-- Pricing Preview -->
+    <div style="margin-bottom:5rem">
+      <h2 style="font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:0.5rem">Simple, transparent <span class="grad-text">pricing</span></h2>
+      <p style="text-align:center;color:var(--muted);margin-bottom:3rem">No hidden fees. No surprise bills. Cancel anytime.</p>
+      <div class="grid-3" style="gap:2rem">
+        <div class="pricing-card">
+          <div class="service-number" style="margin-bottom:0.5rem">Starter</div>
+          <div class="price">$29<span>/mo</span></div>
+          <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem">Perfect for indie developers and small teams.</p>
+          <div class="pricing-feature"><span class="check">✓</span> 3 projects</div>
+          <div class="pricing-feature"><span class="check">✓</span> 100GB storage</div>
+          <div class="pricing-feature"><span class="check">✓</span> Basic analytics</div>
+          <div class="pricing-feature"><span class="check">✓</span> Community support</div>
+          <div class="pricing-feature"><span class="x">—</span> AI features</div>
+          <div class="pricing-feature"><span class="x">—</span> Custom domains</div>
+          <button class="btn-outline" style="width:100%;justify-content:center;margin-top:1.5rem" onclick="showPage('contact')">Get Started</button>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">⭐ Most Popular</div>
+          <div class="service-number" style="margin-bottom:0.5rem">Pro</div>
+          <div class="price"><span class="grad-text">$79</span><span>/mo</span></div>
+          <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem">For growing teams that need more power.</p>
+          <div class="pricing-feature"><span class="check">✓</span> Unlimited projects</div>
+          <div class="pricing-feature"><span class="check">✓</span> 1TB storage</div>
+          <div class="pricing-feature"><span class="check">✓</span> Advanced analytics</div>
+          <div class="pricing-feature"><span class="check">✓</span> Priority support</div>
+          <div class="pricing-feature"><span class="check">✓</span> AI features included</div>
+          <div class="pricing-feature"><span class="check">✓</span> Custom domains</div>
+          <button class="btn-grad" style="width:100%;justify-content:center;margin-top:1.5rem" onclick="showPage('contact')">Start Free Trial</button>
+        </div>
+        <div class="pricing-card">
+          <div class="service-number" style="margin-bottom:0.5rem">Enterprise</div>
+          <div class="price">Custom</div>
+          <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem">Tailored for large organizations with specific needs.</p>
+          <div class="pricing-feature"><span class="check">✓</span> Everything in Pro</div>
+          <div class="pricing-feature"><span class="check">✓</span> Dedicated infra</div>
+          <div class="pricing-feature"><span class="check">✓</span> SLA guarantee</div>
+          <div class="pricing-feature"><span class="check">✓</span> 24/7 SRE support</div>
+          <div class="pricing-feature"><span class="check">✓</span> HIPAA compliance</div>
+          <div class="pricing-feature"><span class="check">✓</span> Custom contracts</div>
+          <button class="btn-outline" style="width:100%;justify-content:center;margin-top:1.5rem" onclick="showPage('contact')">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div style="background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:2.5rem;text-align:center">How we <span class="grad-text">work together</span></h2>
+      <div class="grid-2" style="gap:2rem">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-content"><h4>Discovery & Scoping</h4><p>We start with a deep-dive discovery session to understand your goals, constraints, and definition of success.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-content"><h4>Strategy & Planning</h4><p>We build a detailed roadmap with milestones, deliverables, and clear accountability at every stage.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-content"><h4>Execution & Iteration</h4><p>Bi-weekly sprints with demos and feedback loops. You're never surprised — you're always in the loop.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-content"><h4>Launch & Handover</h4><p>Full documentation, knowledge transfer, and post-launch support to ensure long-term success.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= TEAM PAGE ============================= -->
+<div class="page" id="page-team">
+  <section style="padding:5rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="label-pill"><span class="dot"></span> The People</div>
+      <h1 class="section-title">Built by the <span class="grad-text">best in the game</span></h1>
+      <p class="section-subtitle" style="margin:0 auto">A diverse team of engineers, designers, and strategists united by an obsession with quality and customer success.</p>
+    </div>
+
+    <!-- Leadership -->
+    <h3 style="font-size:1rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem;font-family:'DM Mono',monospace">Leadership</h3>
+    <div class="grid-4" style="margin-bottom:4rem">
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:linear-gradient(135deg,rgba(127,0,255,0.3),rgba(225,0,255,0.2))">AZ</div></div>
+        <div class="team-info">
+          <div class="team-name">Alex Zhou</div>
+          <div class="team-role">Co-Founder & CEO</div>
+          <div class="team-socials">
+            <a class="social-icon" href="#">𝕏</a>
+            <a class="social-icon" href="#">in</a>
+            <a class="social-icon" href="#">@</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:linear-gradient(135deg,rgba(0,219,222,0.3),rgba(252,0,255,0.2))">MK</div></div>
+        <div class="team-info">
+          <div class="team-name">Maya Krishnan</div>
+          <div class="team-role">Co-Founder & CTO</div>
+          <div class="team-socials">
+            <a class="social-icon" href="#">𝕏</a>
+            <a class="social-icon" href="#">in</a>
+            <a class="social-icon" href="#">@</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:linear-gradient(135deg,rgba(225,0,255,0.3),rgba(0,219,222,0.2))">JO</div></div>
+        <div class="team-info">
+          <div class="team-name">James Okafor</div>
+          <div class="team-role">CPO</div>
+          <div class="team-socials">
+            <a class="social-icon" href="#">𝕏</a>
+            <a class="social-icon" href="#">in</a>
+            <a class="social-icon" href="#">@</a>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:linear-gradient(135deg,rgba(127,0,255,0.25),rgba(0,219,222,0.25))">SP</div></div>
+        <div class="team-info">
+          <div class="team-name">Sara Park</div>
+          <div class="team-role">CFO</div>
+          <div class="team-socials">
+            <a class="social-icon" href="#">𝕏</a>
+            <a class="social-icon" href="#">in</a>
+            <a class="social-icon" href="#">@</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Engineering -->
+    <h3 style="font-size:1rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem;font-family:'DM Mono',monospace">Engineering</h3>
+    <div class="grid-4" style="margin-bottom:4rem">
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:rgba(127,0,255,0.2)">TR</div></div>
+        <div class="team-info">
+          <div class="team-name">Tariq Raza</div><div class="team-role">Staff Engineer</div>
+          <div class="team-socials"><a class="social-icon" href="#">𝕏</a><a class="social-icon" href="#">in</a></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:rgba(0,219,222,0.15)">LW</div></div>
+        <div class="team-info">
+          <div class="team-name">Lei Wang</div><div class="team-role">Platform Lead</div>
+          <div class="team-socials"><a class="social-icon" href="#">𝕏</a><a class="social-icon" href="#">in</a></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:rgba(225,0,255,0.2)">EB</div></div>
+        <div class="team-info">
+          <div class="team-name">Elena Baxter</div><div class="team-role">Security Lead</div>
+          <div class="team-socials"><a class="social-icon" href="#">𝕏</a><a class="social-icon" href="#">in</a></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><div class="team-photo" style="background:rgba(127,0,255,0.15)">DN</div></div>
+        <div class="team-info">
+          <div class="team-name">David Nwosu</div><div class="team-role">ML Engineer</div>
+          <div class="team-socials"><a class="social-icon" href="#">𝕏</a><a class="social-icon" href="#">in</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join Us CTA -->
+    <div class="cta-section">
+      <div style="position:relative;z-index:1">
+        <div style="font-size:2.5rem;margin-bottom:1rem">💼</div>
+        <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:0.8rem">Want to join the team?</h2>
+        <p style="color:var(--muted);max-width:450px;margin:0 auto 2rem;line-height:1.75">We're always looking for exceptional people. Remote-first, equity-rich, deeply human.</p>
+        <button class="btn-grad" onclick="showPage('contact')">View Open Roles →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= BLOG PAGE ============================= -->
+<div class="page" id="page-blog">
+  <section style="padding:5rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="label-pill"><span class="dot"></span> Knowledge Hub</div>
+      <h1 class="section-title">Insights from the <span class="grad-text">frontier</span></h1>
+      <p class="section-subtitle" style="margin:0 auto">Deep dives, tutorials, and perspectives from the RAXOTECH team and community.</p>
+    </div>
+
+    <!-- Categories -->
+    <div style="display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:3rem;justify-content:center">
+      <button class="btn-grad" style="font-size:0.8rem;padding:0.4rem 1rem">All</button>
+      <button class="btn-outline" style="font-size:0.8rem;padding:0.4rem 1rem">Engineering</button>
+      <button class="btn-outline" style="font-size:0.8rem;padding:0.4rem 1rem">Product</button>
+      <button class="btn-outline" style="font-size:0.8rem;padding:0.4rem 1rem">Design</button>
+      <button class="btn-outline" style="font-size:0.8rem;padding:0.4rem 1rem">Security</button>
+      <button class="btn-outline" style="font-size:0.8rem;padding:0.4rem 1rem">Company</button>
+    </div>
+
+    <!-- Featured Post -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;transition:all var(--transition)" onmouseover="this.style.borderColor='rgba(127,0,255,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="height:100%;min-height:280px;background:linear-gradient(135deg,rgba(127,0,255,0.2),rgba(0,219,222,0.15));display:flex;align-items:center;justify-content:center;font-size:5rem">🤖</div>
+      <div style="padding:3rem">
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem"><span class="badge badge-purple">Engineering</span><span class="badge">Featured</span></div>
+        <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.8rem;line-height:1.3">How We Achieved Sub-100ms Global Latency Without Sacrificing Consistency</h2>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.75;margin-bottom:1.5rem">A deep technical look at our edge architecture and the distributed systems choices that made it all possible.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:gap">
+          <div class="blog-meta"><span>Maya Krishnan</span><span>•</span><span>Mar 5, 2025</span><span>•</span><span>12 min read</span></div>
+          <button class="btn-grad" style="font-size:0.8rem;padding:0.45rem 1rem">Read More →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="grid-3">
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(127,0,255,0.15),rgba(225,0,255,0.1))">🔐</div>
+        <div class="blog-body">
+          <div class="blog-cat">Security</div>
+          <div class="blog-title">Zero-Trust Architecture: A Practical Guide for 2025</div>
+          <div class="blog-excerpt">Why the perimeter-based security model is dead, and how to implement zero-trust without disrupting your team.</div>
+          <div class="blog-meta"><span>Elena Baxter</span><span>•</span><span>Feb 28, 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(0,219,222,0.12),rgba(252,0,255,0.08))">📊</div>
+        <div class="blog-body">
+          <div class="blog-cat">Product</div>
+          <div class="blog-title">The Metrics That Actually Matter for SaaS Growth</div>
+          <div class="blog-excerpt">NPS is overrated. Here are the 7 metrics our team watches obsessively and why they predict growth better than anything else.</div>
+          <div class="blog-meta"><span>James Okafor</span><span>•</span><span>Feb 20, 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(225,0,255,0.1),rgba(127,0,255,0.15))">🎨</div>
+        <div class="blog-body">
+          <div class="blog-cat">Design</div>
+          <div class="blog-title">Building Design Systems That Don't Collapse Under Scale</div>
+          <div class="blog-excerpt">Lessons learned from rebuilding our design system three times — and what we'd do differently from day one.</div>
+          <div class="blog-meta"><span>Sara Park</span><span>•</span><span>Feb 14, 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(127,0,255,0.12),rgba(0,219,222,0.1))">⚙️</div>
+        <div class="blog-body">
+          <div class="blog-cat">Engineering</div>
+          <div class="blog-title">Kubernetes at Scale: What No One Tells You</div>
+          <div class="blog-excerpt">The operational challenges that emerge at 10,000 pods that you simply can't learn from documentation.</div>
+          <div class="blog-meta"><span>Tariq Raza</span><span>•</span><span>Feb 7, 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(0,219,222,0.1),rgba(252,0,255,0.1))">🧑‍🤝‍🧑</div>
+        <div class="blog-body">
+          <div class="blog-cat">Company</div>
+          <div class="blog-title">How We Hire: Our Unconventional Engineering Interview Process</div>
+          <div class="blog-excerpt">No LeetCode. No whiteboard algorithms. Here's how we actually evaluate engineering talent at RAXOTECH.</div>
+          <div class="blog-meta"><span>Alex Zhou</span><span>•</span><span>Jan 30, 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,rgba(127,0,255,0.15),rgba(225,0,255,0.12))">🤖</div>
+        <div class="blog-body">
+          <div class="blog-cat">AI/ML</div>
+          <div class="blog-title">LLMs in Production: Managing Costs, Latency, and Reliability</div>
+          <div class="blog-excerpt">Real lessons from deploying large language models at scale for 50,000+ daily active users.</div>
+          <div class="blog-meta"><span>David Nwosu</span><span>•</span><span>Jan 22, 2025</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div style="text-align:center;margin-top:5rem;padding:4rem;background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg)">
+      <div style="font-size:2rem;margin-bottom:0.5rem">📬</div>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.5rem">Stay in the loop</h2>
+      <p style="color:var(--muted);margin-bottom:0;font-size:0.9rem">New articles, product updates, and insider perspectives — delivered weekly.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="your@email.com" />
+        <button class="btn-grad" style="white-space:nowrap">Subscribe →</button>
+      </div>
+      <p style="color:var(--muted2);font-size:0.75rem;margin-top:0.8rem">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= CONTACT PAGE ============================= -->
+<div class="page" id="page-contact">
+  <section style="padding:5rem 5%;max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="label-pill"><span class="dot"></span> Get In Touch</div>
+      <h1 class="section-title">Let's build something <span class="grad-text">amazing</span></h1>
+      <p class="section-subtitle" style="margin:0 auto">Have a project in mind? Want to join our team? Just curious? We'd love to hear from you.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start">
+      <!-- Form -->
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" placeholder="Alex" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" placeholder="Johnson" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" placeholder="alex@company.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company (Optional)</label>
+            <input type="text" placeholder="Your company name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">What can we help with?</label>
+            <select style="width:100%;background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.9rem 1.1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;appearance:none">
+              <option>Platform inquiry</option>
+              <option>Enterprise sales</option>
+              <option>Partnership</option>
+              <option>Career opportunity</option>
+              <option>Press / Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea placeholder="Tell us about your project, team size, and timeline..." style="min-height:140px"></textarea>
+          </div>
+          <button class="btn-grad" style="width:100%;justify-content:center;padding:0.9rem">🚀 Send Message</button>
+          <p style="text-align:center;color:var(--muted2);font-size:0.8rem;margin-top:0.8rem">We typically respond within 2 business hours.</p>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-detail"><h4>Email Us</h4><p>hello@raxotech.com<br/>support@raxotech.com</p></div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail"><h4>Call Us</h4><p>+1 (415) 555-0182<br/>Mon–Fri, 9am–6pm PST</p></div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail"><h4>Headquarters</h4><p>340 Pine Street, Suite 800<br/>San Francisco, CA 94104</p></div>
+        </div>
+
+        <div class="map-placeholder">
+          <span>🗺️</span> San Francisco, CA
+        </div>
+
+        <div style="margin-top:1.5rem">
+          <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:1rem;color:var(--muted)">Follow us</h4>
+          <div style="display:flex;gap:0.7rem;flex-wrap:wrap">
+            <a href="#" class="social-icon" style="width:auto;padding:0.5rem 1rem;border-radius:50px;font-size:0.83rem;gap:0.4rem">𝕏 Twitter</a>
+            <a href="#" class="social-icon" style="width:auto;padding:0.5rem 1rem;border-radius:50px;font-size:0.83rem;gap:0.4rem">in LinkedIn</a>
+            <a href="#" class="social-icon" style="width:auto;padding:0.5rem 1rem;border-radius:50px;font-size:0.83rem;gap:0.4rem">⌥ GitHub</a>
+            <a href="#" class="social-icon" style="width:auto;padding:0.5rem 1rem;border-radius:50px;font-size:0.83rem;gap:0.4rem">▶ YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.6rem;cursor:default">RAXOTECH</div>
+        <p>The next-generation platform for teams who move fast, ship faster, and build things worth building.</p>
+        <div class="footer-social">
+          <a href="#">𝕏</a>
+          <a href="#">in</a>
+          <a href="#">⌥</a>
+          <a href="#">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('home')">Home</a></li>
+          <li><a href="#" onclick="showPage('about')">About Us</a></li>
+          <li><a href="#" onclick="showPage('features')">Features</a></li>
+          <li><a href="#" onclick="showPage('services')">Services</a></li>
+          <li><a href="#" onclick="showPage('team')">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Status Page</a></li>
+          <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">hello@raxotech.com</a></li>
+          <li><a href="#">+1 (415) 555-0182</a></li>
+          <li><a href="#" onclick="showPage('contact')">Contact Form</a></li>
+          <li><a href="#">Support Portal</a></li>
+          <li><a href="#">Partnerships</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 RAXOTECH, Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showPage(name, btn) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target
+    const target = document.getElementById('page-' + name);
+    if (target) target.classList.add('active');
+    // Update nav active state
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      document.querySelectorAll('.nav-links button').forEach(b => {
+        if (b.textContent.toLowerCase() === name) b.classList.add('active');
+      });
+    }
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close mobile menu
+    document.getElementById('navLinks').classList.remove('open');
+    // Trigger reveal animations
+    setTimeout(initReveal, 100);
+  }
+
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  function initReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.remove('visible');
+      observer.observe(el);
+    });
+  }
+
+  // Init on load
+  window.addEventListener('load', () => {
+    initReveal();
+    // Animate hero stats counter
+    document.querySelectorAll('.stat-num').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(10px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 400);
+    });
+  });
+</script>
+</body>
+</html>
